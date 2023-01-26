@@ -7,6 +7,8 @@ import shopee_s25323.demo.Model.Product;
 import shopee_s25323.demo.Model.TransactionStatus;
 import shopee_s25323.demo.Storage.ShopingStorage;
 
+import java.util.List;
+
 @Component
 public class ShopService {
     public ShopService(ShopingStorage shopingStorage) {
@@ -28,5 +30,11 @@ public class ShopService {
         return TransactionStatus.ACCEPTED;
     }
 
+    public List<Product> getAllProducts() {
+        return shopingStorage.getProductsList();
+    }
+    public Product getProductByName(String name){
+        return shopingStorage.getProductByName(name);
+    }
 
 }
